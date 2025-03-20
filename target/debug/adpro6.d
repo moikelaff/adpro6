@@ -1,1 +1,1 @@
-C:\Users\OMEN\Desktop\codes\adpro6\target\debug\adpro6.exe: C:\Users\OMEN\Desktop\codes\adpro6\src\main.rs
+C:\Users\OMEN\Desktop\codes\adpro6\target\debug\adpro6.exe: C:\Users\OMEN\Desktop\codes\adpro6\src\lib.rs C:\Users\OMEN\Desktop\codes\adpro6\src\main.rs C:\Users\OMEN\Desktop\codes\adpro6\src\thread_pool.rs C:\Users\OMEN\Desktop\codes\adpro6\src\worker.rs

@@ -6,13 +6,25 @@ use std::{
     time::Duration,
 };
 
+use adpro6::thread_pool::ThreadPool;
+
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    
+    let pool = ThreadPool::build()
+        .with_size(4)
+        .finalize();
+    
     println!("Server running on http://127.0.0.1:7878");
+
     for stream in listener.incoming() {
         let stream = stream.unwrap();
-        handle_connection(stream);
+        pool.execute(|| {
+            handle_connection(stream);
+        });
     }
+
+    println!("Shutting down.");
 }
 
 fn handle_connection(mut stream: TcpStream) {
